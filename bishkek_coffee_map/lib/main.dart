@@ -1,10 +1,15 @@
+import 'package:coffee_map_bishkek/firebase_options.dart';
 import 'package:coffee_map_bishkek/gen/strings.g.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   LocaleSettings.useDeviceLocale();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(TranslationProvider(child: const MyApp()));
 }
 
