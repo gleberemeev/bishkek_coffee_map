@@ -1,4 +1,4 @@
-import 'package:bishkek_coffee_map/gen/strings.g.dart';
+import 'package:coffee_map_bishkek/gen/strings.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 

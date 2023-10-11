@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "578193313088",
+    "project_id": "coffee-map-bishkek",
+    "storage_bucket": "coffee-map-bishkek.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578193313088:android:9e08923f40b336cfb8bea5",
+        "android_client_info": {
+          "package_name": "org.gleb.bishkek_coffee_map"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDr8ja5xKpOnOcwSkWlbR1M7G1SdbIngNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
