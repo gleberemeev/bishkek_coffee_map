@@ -1,12 +1,16 @@
+import 'package:coffee_map_bishkek/core/service_locator.dart';
 import 'package:coffee_map_bishkek/firebase_options.dart';
 import 'package:coffee_map_bishkek/gen/strings.g.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'data/repository/network_repository.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   LocaleSettings.useDeviceLocale();
+  await configureDependencies();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -34,7 +38,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  final NetworkRepository repository = getIt.get<NetworkRepository>();
+
+  MyHomePage({super.key, required this.title});
 
   final String title;
 
