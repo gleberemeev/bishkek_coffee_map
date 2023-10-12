@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:coffee_map_bishkek/core/service_locator.dart';
 import 'package:coffee_map_bishkek/firebase_options.dart';
 import 'package:coffee_map_bishkek/gen/strings.g.dart';
@@ -5,6 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'core/auto_router.dart';
 import 'data/repository/network_repository.dart';
 
 void main() async {
@@ -14,16 +16,19 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(TranslationProvider(child: const MyApp()));
+  runApp(TranslationProvider(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final _appRouter = AppRouter();
+
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
 
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: _appRouter.config(),
       title: t.app_title,
       locale: TranslationProvider.of(context).flutterLocale,
       supportedLocales: AppLocaleUtils.supportedLocales,
@@ -32,18 +37,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(title: t.app_title),
     );
   }
 }
 
+@RoutePage()
 class MyHomePage extends StatefulWidget {
-  final NetworkRepository repository = getIt.get<NetworkRepository>();
-
-  MyHomePage({super.key, required this.title});
-
-  final String title;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -62,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: const Text("Bishkek coffee map"),
       ),
       body: Center(
         child: Column(
