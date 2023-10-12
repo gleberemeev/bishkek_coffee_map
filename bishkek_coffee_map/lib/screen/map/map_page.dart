@@ -1,12 +1,8 @@
-import 'package:coffee_map_bishkek/core/service_locator.dart';
-import 'package:coffee_map_bishkek/data/repository/network_repository.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 
+@RoutePage()
 class MapPage extends StatefulWidget {
-  final NetworkRepository repository = getIt.get<NetworkRepository>();
-
-  MapPage({super.key});
-
   @override
   State<StatefulWidget> createState() {
     return MapPageState();

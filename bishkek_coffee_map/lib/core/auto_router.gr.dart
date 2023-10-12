@@ -15,13 +15,33 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    MapRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: MapPage(),
+      );
+    },
     MyHomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: MyHomePage(),
       );
-    }
+    },
   };
+}
+
+/// generated route for
+/// [MapPage]
+class MapRoute extends PageRouteInfo<void> {
+  const MapRoute({List<PageRouteInfo>? children})
+      : super(
+          MapRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MapRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
