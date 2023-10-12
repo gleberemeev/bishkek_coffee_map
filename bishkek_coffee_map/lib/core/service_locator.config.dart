@@ -11,9 +11,9 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../data/repository/api_network_repository.dart' as _i4;
-import '../data/repository/mock_network_repository.dart' as _i5;
-import '../data/repository/network_repository.dart' as _i3;
+import '../data/data_module.dart' as _i5;
+import '../data/repository/network_repository.dart' as _i4;
+import '../screen/map/map_bloc.dart' as _i3;
 
 // initializes the registration of main-scope dependencies inside of GetIt
 _i1.GetIt $initGetIt(
@@ -26,13 +26,10 @@ _i1.GetIt $initGetIt(
     environment,
     environmentFilter,
   );
-  gh.factory<_i3.NetworkRepository>(
-    () => _i4.ApiNetworkRepository(),
-    instanceName: 'api',
-  );
-  gh.factory<_i3.NetworkRepository>(
-    () => _i5.MockNetworkRepository(),
-    instanceName: 'mock',
-  );
+  final dataModule = _$DataModule();
+  gh.factory<_i3.MapBloc>(() => _i3.MapBloc());
+  gh.factory<_i4.NetworkRepository>(() => dataModule.getNetworkRepository());
   return getIt;
 }
+
+class _$DataModule extends _i5.DataModule {}
