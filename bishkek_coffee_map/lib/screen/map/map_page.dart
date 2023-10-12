@@ -1,19 +1,29 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:coffee_map_bishkek/screen/map/map_bloc.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
-class MapPage extends StatefulWidget {
+class MapPage extends StatelessWidget {
+  const MapPage({super.key});
+
   @override
-  State<StatefulWidget> createState() {
-    return MapPageState();
+  Widget build(BuildContext context) {
+    return BlocProvider(create: (_) => MapBloc(), child: const MapView());
   }
 }
 
-class MapPageState extends State<MapPage> {
+class MapView extends StatelessWidget {
+  const MapView({super.key});
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return BlocBuilder<MapBloc, MapState>(
+      builder: (context, state) {
+        return Container(color: Colors.white,);
+      },
+    );
   }
 
 }
