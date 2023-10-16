@@ -9,7 +9,7 @@ part of 'coffee_shop_list_response.dart';
 _$CoffeeShopListResponseImpl _$$CoffeeShopListResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$CoffeeShopListResponseImpl(
-      items: (json['items'] as Map<String, dynamic>).map(
+      items: (json['items'] as Map<String, dynamic>?)?.map(
         (k, e) =>
             MapEntry(k, CoffeeShopItem.fromJson(e as Map<String, dynamic>)),
       ),

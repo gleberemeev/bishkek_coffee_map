@@ -10,11 +10,13 @@ const socialWhatsapp = "whatsapp";
 @freezed
 class CoffeeShopListResponse with _$CoffeeShopListResponse {
   const factory CoffeeShopListResponse({
-    required Map<String, CoffeeShopItem> items,
+    required Map<String, CoffeeShopItem>? items,
   }) = _CoffeeShopListResponse;
 
   factory CoffeeShopListResponse.fromJson(Map<String, dynamic> json) =>
       _$CoffeeShopListResponseFromJson(json);
+
+  static const empty = CoffeeShopListResponse(items: null);
 }
 
 @freezed

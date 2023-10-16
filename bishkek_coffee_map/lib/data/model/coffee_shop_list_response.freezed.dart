@@ -21,7 +21,7 @@ CoffeeShopListResponse _$CoffeeShopListResponseFromJson(
 
 /// @nodoc
 mixin _$CoffeeShopListResponse {
-  Map<String, CoffeeShopItem> get items => throw _privateConstructorUsedError;
+  Map<String, CoffeeShopItem>? get items => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $CoffeeShopListResponseCopyWith<$Res> {
           $Res Function(CoffeeShopListResponse) then) =
       _$CoffeeShopListResponseCopyWithImpl<$Res, CoffeeShopListResponse>;
   @useResult
-  $Res call({Map<String, CoffeeShopItem> items});
+  $Res call({Map<String, CoffeeShopItem>? items});
 }
 
 /// @nodoc
@@ -52,13 +52,13 @@ class _$CoffeeShopListResponseCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = null,
+    Object? items = freezed,
   }) {
     return _then(_value.copyWith(
-      items: null == items
+      items: freezed == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as Map<String, CoffeeShopItem>,
+              as Map<String, CoffeeShopItem>?,
     ) as $Val);
   }
 }
@@ -72,7 +72,7 @@ abstract class _$$CoffeeShopListResponseImplCopyWith<$Res>
       __$$CoffeeShopListResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Map<String, CoffeeShopItem> items});
+  $Res call({Map<String, CoffeeShopItem>? items});
 }
 
 /// @nodoc
@@ -88,13 +88,13 @@ class __$$CoffeeShopListResponseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = null,
+    Object? items = freezed,
   }) {
     return _then(_$CoffeeShopListResponseImpl(
-      items: null == items
+      items: freezed == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as Map<String, CoffeeShopItem>,
+              as Map<String, CoffeeShopItem>?,
     ));
   }
 }
@@ -105,18 +105,20 @@ class _$CoffeeShopListResponseImpl
     with DiagnosticableTreeMixin
     implements _CoffeeShopListResponse {
   const _$CoffeeShopListResponseImpl(
-      {required final Map<String, CoffeeShopItem> items})
+      {required final Map<String, CoffeeShopItem>? items})
       : _items = items;
 
   factory _$CoffeeShopListResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$CoffeeShopListResponseImplFromJson(json);
 
-  final Map<String, CoffeeShopItem> _items;
+  final Map<String, CoffeeShopItem>? _items;
   @override
-  Map<String, CoffeeShopItem> get items {
+  Map<String, CoffeeShopItem>? get items {
+    final value = _items;
+    if (value == null) return null;
     if (_items is EqualUnmodifiableMapView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_items);
+    return EqualUnmodifiableMapView(value);
   }
 
   @override
@@ -162,14 +164,14 @@ class _$CoffeeShopListResponseImpl
 
 abstract class _CoffeeShopListResponse implements CoffeeShopListResponse {
   const factory _CoffeeShopListResponse(
-          {required final Map<String, CoffeeShopItem> items}) =
+          {required final Map<String, CoffeeShopItem>? items}) =
       _$CoffeeShopListResponseImpl;
 
   factory _CoffeeShopListResponse.fromJson(Map<String, dynamic> json) =
       _$CoffeeShopListResponseImpl.fromJson;
 
   @override
-  Map<String, CoffeeShopItem> get items;
+  Map<String, CoffeeShopItem>? get items;
   @override
   @JsonKey(ignore: true)
   _$$CoffeeShopListResponseImplCopyWith<_$CoffeeShopListResponseImpl>
