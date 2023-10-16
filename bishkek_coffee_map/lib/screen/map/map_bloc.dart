@@ -12,9 +12,11 @@ part 'map_state.dart';
 class MapBloc extends Bloc<MapEvent, MapState> {
   final NetworkRepository repository = getIt<NetworkRepository>();
 
-  MapBloc() : super(MapScreenState()) {
-    on<MapEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+  MapBloc() : super(MapScreenState(screenState: MapState.screenStateLoading)) {
+    on<MapLoadedEvent>(_onMapLoadedEvent);
+  }
+
+  _onMapLoadedEvent(MapLoadedEvent event, Emitter<MapState> emit) {
+    emit(MapScreenState(screenState: MapState.screenStateLoading));
   }
 }

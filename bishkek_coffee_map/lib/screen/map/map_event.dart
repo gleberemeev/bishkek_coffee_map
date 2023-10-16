@@ -1,5 +1,5 @@
 part of 'map_bloc.dart';
 
-sealed class MapEvent {
+sealed class MapEvent {}
 
-}
+class MapLoadedEvent extends MapEvent {}

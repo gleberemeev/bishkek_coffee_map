@@ -9,7 +9,7 @@ class MapPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(create: (_) => MapBloc(), child: const MapView());
+    return BlocProvider(create: (_) => MapBloc()..add(MapLoadedEvent()), child: const MapView());
   }
 }
 
