@@ -20,9 +20,10 @@ class MapView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<MapBloc, MapState>(
       builder: (context, state) {
-        return Container(color: Colors.white,);
+        return Container();
       },
     );
   }
+
 
 }

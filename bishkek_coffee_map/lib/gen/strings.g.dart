@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 3
-/// Strings: 3 (1 per locale)
+/// Strings: 9 (3 per locale)
 ///
-/// Built on 2023-10-16 at 11:17 UTC
+/// Built on 2023-10-16 at 12:48 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -152,6 +152,8 @@ class _StringsEn implements BaseTranslations<AppLocale, _StringsEn> {
 
 	// Translations
 	String get app_title => 'Bishkek Coffee Map';
+	String get please_refresh => 'Please tap refresh button to try again';
+	String get refresh => 'Refresh';
 }
 
 // Path: <root>
@@ -180,6 +182,8 @@ class _StringsKy implements _StringsEn {
 
 	// Translations
 	@override String get app_title => 'Бишкек кофе картасы';
+	@override String get please_refresh => 'Сураныч, кайра аракет кылыңыз';
+	@override String get refresh => 'Жаңыртуу';
 }
 
 // Path: <root>
@@ -208,6 +212,8 @@ class _StringsRu implements _StringsEn {
 
 	// Translations
 	@override String get app_title => 'Кофейная карта Бишкека';
+	@override String get please_refresh => 'Пожалуйста, попробуйте еще раз';
+	@override String get refresh => 'Обновить';
 }
 
 /// Flat map(s) containing all translations.
@@ -217,6 +223,8 @@ extension on _StringsEn {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'app_title': return 'Bishkek Coffee Map';
+			case 'please_refresh': return 'Please tap refresh button to try again';
+			case 'refresh': return 'Refresh';
 			default: return null;
 		}
 	}
@@ -226,6 +234,8 @@ extension on _StringsKy {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'app_title': return 'Бишкек кофе картасы';
+			case 'please_refresh': return 'Сураныч, кайра аракет кылыңыз';
+			case 'refresh': return 'Жаңыртуу';
 			default: return null;
 		}
 	}
@@ -235,6 +245,8 @@ extension on _StringsRu {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'app_title': return 'Кофейная карта Бишкека';
+			case 'please_refresh': return 'Пожалуйста, попробуйте еще раз';
+			case 'refresh': return 'Обновить';
 			default: return null;
 		}
 	}
