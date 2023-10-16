@@ -4,6 +4,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'coffee_shop_list_response.freezed.dart';
 part 'coffee_shop_list_response.g.dart';
 
+const socialInstagram = 'instagram';
+const socialWhatsapp = "whatsapp";
+
 @freezed
 class CoffeeShopListResponse with _$CoffeeShopListResponse {
   const factory CoffeeShopListResponse({
