@@ -1,10 +1,13 @@
 import 'package:coffee_map_bishkek/data/model/coffee_shop_list_response.dart';
 import 'package:coffee_map_bishkek/data/repository/network_repository.dart';
+import 'package:coffee_map_bishkek/utils/duration_extension.dart';
+import 'package:coffee_map_bishkek/utils/num_extensions.dart';
 import 'package:injectable/injectable.dart';
 
 class MockNetworkRepository extends NetworkRepository {
   @override
   Future<CoffeeShopListResponse> getCoffeeShops() async {
+    await 1.seconds.delay();
     return const CoffeeShopListResponse(items: {
       "1": CoffeeShopItem(
           id: "1",
